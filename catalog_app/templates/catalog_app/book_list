@@ -1,0 +1,20 @@
+{% extends 'catalog_app/base.html' %}
+
+{% block title %}Book List{% endblock %}
+
+{% block content %}
+<h1>Book List</h1>
+<form method="get" class="mb-3">
+    <input type="text" name="q" value="{{ query }}" placeholder="Search by title or author" class="form-control d-inline-block w-50">
+    <button type="submit" class="btn btn-primary">Search</button>
+</form>
+<ul class="list-group">
+    {% for book in books %}
+    <li class="list-group-item">
+        <a href="{% url 'book_detail' book.pk %}">{{ book.title }} by {{ book.author }} ({{ book.publish_year }})</a>
+    </li>
+    {% empty %}
+    <li class="list-group-item">No books found. Try adding some!</li>
+    {% endfor %}
+</ul>
+{% endblock %}
