@@ -1,0 +1,11 @@
+{% extends 'catalog_app/base.html' %}
+
+{% block title %}{{ book.title }}{% endblock %}
+
+{% block content %}
+<h1>{{ book.title }}</h1>
+<p>Author: {{ book.author }}</p>
+<p>Year: {{ book.publish_year }}</p>
+<p>Description: {{ book.description }}</p>
+<a href="{% url 'book_list' %}" class="btn btn-secondary">Back to List</a>
+{% endblock %}
