@@ -5,7 +5,7 @@
 from django.db import models
 
 # Book model with fields for title, author, year, and desc
-# I changed published_date to publish_year to simplify
+
 class Book(models.Model):
     title = models.CharField(max_length=200)
     author = models.CharField(max_length=100)
